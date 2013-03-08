@@ -27,7 +27,7 @@ app.get "/set", (req, res) ->
       res.redirect(url)
     else
       radish.get "#{action}_#{url}", (err, count) ->
-        res.send
+        res.jsonp
           action: action
           url: url
           count: Number(count)
@@ -40,7 +40,7 @@ app.get "/get", (req, res) ->
   res.send(400, "'url' query param is required") unless url
 
   radish.get "#{action}_#{url}", (err, count) ->
-    res.send
+    res.jsonp
       action: action
       url: url
       count: Number(count)

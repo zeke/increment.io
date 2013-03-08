@@ -13,7 +13,7 @@ Increments the count for the given url/action pair.
 
 The default action is "redirect", but you can specify any value. The
 redirect action will redirect to the given URL, while any other action will
-simply respond with a 200.
+return a JSON object with the updated count.
 
 - [/set?url=http://google.com](https://interlude.herokuapp.com/set?url=http://google.com)
 - [/set?url=http://zeke.sikelianos.com&action=upvote](https://interlude.herokuapp.com/set?url=http://zeke.sikelianos.com&action=upvote)

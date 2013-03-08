@@ -21,7 +21,11 @@ app.get "/set", (req, res) ->
     if action is "redirect"
       res.redirect(url)
     else
-      res.send(200)
+      radish.get "#{action}_#{url}", (err, count) ->
+        res.send
+          action: action
+          url: url
+          count: Number(count)
 
 app.get "/get", (req, res) ->
 

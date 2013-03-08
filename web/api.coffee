@@ -2,7 +2,7 @@ express  = require("express")
 https    = require("https")
 radish   = require("../lib/radish").init()
 
-app = express.createServer(
+app = express(
   express.logger()
   express.cookieParser()
   express.bodyParser())

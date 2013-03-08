@@ -11,22 +11,36 @@ Usage
 
 Increments the count for the given url/action pair.
 
-The default value of `action` is "redirect", but you can specify any value. The
+The default action is "redirect", but you can specify any value. The
 redirect action will redirect to the given URL, while any other action will
 simply respond with a 200.
 
-```sh
-https://interlude.herokuapp.com/set?url=http://google.com
-https://interlude.herokuapp.com/set?url=http://example.com&action=upvote
-https://interlude.herokuapp.com/set?url=http://example.com&action=downvote
-```
+[/set?url=http://google.com](https://interlude.herokuapp.com/set?url=http://google.com)
+[/set?url=http://zeke.sikelianos.com&action=upvote](https://interlude.herokuapp.com/set?url=http://zeke.sikelianos.com&action=upvote)
+[/set?url=http://zeke.sikelianos.com&action=downvote](https://interlude.herokuapp.com/set?url=http://zeke.sikelianos.com&action=downvote)
 
 ### Get
 
 Returns a JSON response with a count for the given url/action pair.
 
-```sh
-https://interlude.herokuapp.com/get?url=http://google.com
+[/get?url=http://google.com](https://interlude.herokuapp.com/get?url=http://google.com)
+
+```json
+{
+  action: "redirect",
+  url: "http://google.com",
+  count: 5
+}
+```
+
+[/get?url=http://zeke.sikelianos.com&action=upvote](https://interlude.herokuapp.com/get?url=http://zeke.sikelianos.com&action=upvote)
+
+```json
+{
+  action: "upvote",
+  url: "http://zeke.sikelianos.com",
+  count: 22
+}
 ```
 
 Dev

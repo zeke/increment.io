@@ -8,7 +8,7 @@ app = express.createServer(
   express.bodyParser())
 
 app.get "/", (req, res) ->
-  res.redirect("https://github.com/zeke/interlude")
+  res.redirect("https://github.com/zeke/interlude#readme")
 
 app.get "/set", (req, res) ->
 

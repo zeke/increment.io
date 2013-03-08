@@ -15,9 +15,9 @@ The default action is "redirect", but you can specify any value. The
 redirect action will redirect to the given URL, while any other action will
 simply respond with a 200.
 
-[/set?url=http://google.com](https://interlude.herokuapp.com/set?url=http://google.com)
-[/set?url=http://zeke.sikelianos.com&action=upvote](https://interlude.herokuapp.com/set?url=http://zeke.sikelianos.com&action=upvote)
-[/set?url=http://zeke.sikelianos.com&action=downvote](https://interlude.herokuapp.com/set?url=http://zeke.sikelianos.com&action=downvote)
+- [/set?url=http://google.com](https://interlude.herokuapp.com/set?url=http://google.com)
+- [/set?url=http://zeke.sikelianos.com&action=upvote](https://interlude.herokuapp.com/set?url=http://zeke.sikelianos.com&action=upvote)
+- [/set?url=http://zeke.sikelianos.com&action=downvote](https://interlude.herokuapp.com/set?url=http://zeke.sikelianos.com&action=downvote)
 
 ### Get
 
@@ -25,7 +25,7 @@ Returns a JSON response with a count for the given url/action pair.
 
 [/get?url=http://google.com](https://interlude.herokuapp.com/get?url=http://google.com)
 
-```json
+```js
 {
   action: "redirect",
   url: "http://google.com",
@@ -35,7 +35,7 @@ Returns a JSON response with a count for the given url/action pair.
 
 [/get?url=http://zeke.sikelianos.com&action=upvote](https://interlude.herokuapp.com/get?url=http://zeke.sikelianos.com&action=upvote)
 
-```json
+```js
 {
   action: "upvote",
   url: "http://zeke.sikelianos.com",

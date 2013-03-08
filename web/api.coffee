@@ -1,5 +1,6 @@
 express  = require("express")
 https    = require("https")
+cors     = require("cors")
 radish   = require("../lib/radish").init()
 
 app = express(
@@ -7,15 +8,10 @@ app = express(
   express.cookieParser()
   express.bodyParser())
 
-app.all "/", (req, res, next) ->
-  res.header "Access-Control-Allow-Origin", "*"
-  res.header "Access-Control-Allow-Headers", "X-Requested-With"
-  next()
-
 app.get "/", (req, res) ->
   res.redirect("https://github.com/zeke/interlude#readme")
 
-app.get "/set", (req, res) ->
+app.get "/set", cors(), (req, res) ->
 
   url = req.query.url
   action = req.query.action or "redirect"
@@ -32,7 +28,7 @@ app.get "/set", (req, res) ->
           url: url
           count: Number(count)
 
-app.get "/get", (req, res) ->
+app.get "/get", cors(), (req, res) ->
 
   url = req.query.url
   action = req.query.action or "redirect"

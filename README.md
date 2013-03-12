@@ -1,25 +1,22 @@
-# Increment.io
+<h1 style="font-size:42px;font-family:monaco,consolas,courier,monospace; color:black;">increment<span style="color:#CCC">.io</span></h1>
 
-Increment.io is a simple webservice for counting click-throughs and
+A simple webservice for counting click-throughs and
 other events for URLs.
 
 ## Usage
 
-### Set
+### Incrementing
 
-Increments the count for the given url/action pair.
-
-The default action is "redirect", but you can specify any value. The
+To increment the count for a URL, pass `url` and optionally `action` to the base
+path as query params. The default action is `redirect`, but you can specify any value you want. The
 redirect action will redirect to the given URL, while any other action will
 return a JSON object with the updated count.
 
-- [/set?url=http://google.com](https://increment.io/set?url=http://google.com)
-- [/set?url=http://zeke.sikelianos.com&action=upvote](https://increment.io/set?url=http://zeke.sikelianos.com&action=upvote)
-- [/set?url=http://zeke.sikelianos.com&action=downvote](https://increment.io/set?url=http://zeke.sikelianos.com&action=downvote)
+- [increment.io?url=http://google.com](https://increment.io?url=http://google.com)
+- [increment.io?url=http://zeke.sikelianos.com&action=upvote](https://increment.io?url=http://zeke.sikelianos.com&action=upvote)
+- [increment.io?url=http://zeke.sikelianos.com&action=downvote](https://increment.io?url=http://zeke.sikelianos.com&action=downvote)
 
-### Get
-
-Returns a JSON response with a count for the given url/action pair.
+### Getting Counts
 
 [/get?url=http://google.com](https://increment.io/get?url=http://google.com)
 

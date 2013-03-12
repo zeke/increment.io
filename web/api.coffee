@@ -8,15 +8,12 @@ app = express(
   express.cookieParser()
   express.bodyParser())
 
-# app.get "/", (req, res) ->
-#   res.redirect("https://github.com/zeke/interlude#readme")
-
 app.get "/", cors(), (req, res) ->
 
   url = req.query.url
   action = req.query.action or "redirect"
 
-  res.redirect("https://github.com/zeke/interlude#readme") unless url
+  res.redirect("https://github.com/zeke/increment.io#readme") unless url
 
   radish.incr "#{action}_#{url}", (err, reply) ->
     if action is "redirect"

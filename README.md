@@ -12,13 +12,13 @@ path as query params. The default action is `redirect`, but you can specify any 
 redirect action will redirect to the given URL, while any other action will
 return a JSON object with the updated count.
 
-- [increment.io?url=http://google.com](https://increment.io?url=http://google.com)
-- [increment.io?url=http://zeke.sikelianos.com&action=upvote](https://increment.io?url=http://zeke.sikelianos.com&action=upvote)
-- [increment.io?url=http://zeke.sikelianos.com&action=downvote](https://increment.io?url=http://zeke.sikelianos.com&action=downvote)
+- [increment.io?url=http://google.com](http://increment.io?url=http://google.com)
+- [increment.io?url=http://zeke.sikelianos.com&action=upvote](http://increment.io?url=http://zeke.sikelianos.com&action=upvote)
+- [increment.io?url=http://zeke.sikelianos.com&action=downvote](http://increment.io?url=http://zeke.sikelianos.com&action=downvote)
 
 ### Getting Counts
 
-[/get?url=http://google.com](https://increment.io/get?url=http://google.com)
+[/get?url=http://google.com](http://increment.io/get?url=http://google.com)
 
 ```js
 {
@@ -28,7 +28,7 @@ return a JSON object with the updated count.
 }
 ```
 
-[/get?url=http://zeke.sikelianos.com&action=upvote](https://increment.io/get?url=http://zeke.sikelianos.com&action=upvote)
+[/get?url=http://zeke.sikelianos.com&action=upvote](http://increment.io/get?url=http://zeke.sikelianos.com&action=upvote)
 
 ```js
 {

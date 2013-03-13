@@ -18,24 +18,46 @@ return a JSON object with the updated count.
 
 ### Getting Counts
 
-[/get?url=http://google.com](http://increment.io/get?url=http://google.com)
+Get count for single URL of default action "redirect", [/get?url=http://google.com](http://increment.io/get?url=http://google.com)
 
 ```js
-{
-  action: "redirect",
-  url: "http://google.com",
-  count: 5
-}
+[
+  {
+    action: "redirect",
+    url: "http://google.com",
+    count: 5
+  }
+]
 ```
 
-[/get?url=http://zeke.sikelianos.com&action=upvote](http://increment.io/get?url=http://zeke.sikelianos.com&action=upvote)
+Get count for single URL of "upvote" action, [/get?url=http://zeke.sikelianos.com&action=upvote](http://increment.io/get?url=http://zeke.sikelianos.com&action=upvote)
 
 ```js
-{
-  action: "upvote",
-  url: "http://zeke.sikelianos.com",
-  count: 22
-}
+[
+  {
+    action: "upvote",
+    url: "http://zeke.sikelianos.com",
+    count: 22
+  }
+]
+```
+```
+
+Get count for multipls URLs of default action "redirect", [/get?url=http://zeke.sikelianos.com&url=http://google.com](http://increment.io/get?url=http://zeke.sikelianos.com&url=http://google.com)
+
+```js
+[
+  {
+    action: "redirect",
+    url: "http://zeke.sikelianos.com",
+    count: 22
+  },
+  {
+    action: "redirect",
+    url: "http://google.com",
+    count: 12
+  }
+]
 ```
 
 ## Development

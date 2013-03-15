@@ -41,7 +41,6 @@ Get count for single URL of "upvote" action, [/get?url=http://zeke.sikelianos.co
   }
 ]
 ```
-```
 
 Get count for multipls URLs of default action "redirect", [/get?url=http://zeke.sikelianos.com&url=http://google.com](http://increment.io/get?url=http://zeke.sikelianos.com&url=http://google.com)
 

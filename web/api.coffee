@@ -27,15 +27,17 @@ app.get "/", cors(), (req, res) ->
 
 app.get "/get", cors(), (req, res) ->
 
-  url = req.query.url
+  # Normalize to array even if single 'url' param
+  urls = if req.query.url then [].concat.apply([], [req.query.url]) else []
   action = req.query.action or "redirect"
 
-  res.send(400, "'url' query param is required") unless url
-
-  radish.get "#{action}_#{url}", (err, count) ->
-    res.jsonp
-      action: action
-      url: url
-      count: Number(count)
+  if urls.length == 0
+    res.send(400, "'url' query param is required") 
+  else
+    radish.mget ("#{action}_#{url}" for url in urls), (err, counts) ->
+      res.jsonp counts.map (count) ->
+        action: action
+        url: url
+        count: Number(count)
 
 module.exports = app

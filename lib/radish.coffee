@@ -2,7 +2,7 @@ url      = require("url")
 redis    = require("redis")
 
 exports.init = ->
-  redis_url = url.parse(process.env.REDISCLOUD_URL)
+  redis_url = url.parse(process.env.REDISCLOUD_URL || "redis://:@127.0.0.1:6379")
   client = redis.createClient(redis_url.port, redis_url.hostname, {no_ready_check: true})
 
   client.on "error", (err) ->

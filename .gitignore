@@ -1,2 +1,2 @@
 .env
-dump.rdb
+dump.rdb\nnode_modules
